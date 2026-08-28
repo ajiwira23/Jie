@@ -1,0 +1,3 @@
+import {json,cors,DEFAULT_MIDTRANS_FEES} from "../_lib.js";
+function read(env){try{return env.MIDTRANS_FEE_CONFIG_JSON?JSON.parse(env.MIDTRANS_FEE_CONFIG_JSON):{}}catch{return {}}}
+export async function onRequest({request,env}){if(request.method==='OPTIONS')return new Response(null,{headers:cors(request)});if(request.method!=='GET')return json({error:'Method not allowed'},405,cors(request));const fees={...DEFAULT_MIDTRANS_FEES,...read(env)};return json({serviceFee:Number(env.SERVICE_FEE_AMOUNT||2000),serviceFeeVatRate:Number(env.SERVICE_FEE_VAT_RATE??0.11),gatewayFeeVatRate:Number(env.MIDTRANS_FEE_VAT_RATE??0.11),ewalletDeductionRate:Number(env.EWALLET_DEDUCTION_RATE??0.10),fees},200,{...cors(request),'cache-control':'public, max-age=60'});}

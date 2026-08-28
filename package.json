@@ -1,0 +1,12 @@
+{
+  "name": "aji-wira-digital-platform",
+  "private": true,
+  "scripts": {
+    "check": "node scripts/smoke-test.mjs",
+    "check:env": "node scripts/check-production-env.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "latest"
+  },
+  "type": "module"
+}

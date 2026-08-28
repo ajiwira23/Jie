@@ -1,0 +1,13 @@
+name = "aji-wira-digital-platform"
+compatibility_date = "2026-08-27"
+pages_build_output_dir = "."
+
+# Bind your production D1 database in Cloudflare Dashboard or add the real IDs here.
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "aji-wira-db"
+# database_id = "REPLACE_WITH_REAL_DATABASE_ID"
+
+[vars]
+MIDTRANS_IS_PRODUCTION = "false"
+MIDTRANS_API_BASE_URL = "https://app.sandbox.midtrans.com"

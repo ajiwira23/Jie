@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="id" data-theme="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Admin Dashboard — Aji Wira</title><meta name="description" content="Admin Dashboard — Aji Wira — layanan digital Aji Wira."><link rel="stylesheet" href="css/style.css"><link rel="icon" href="/favicon.svg"><link rel="manifest" href="/manifest.json"></head><body>
+<main class="store-page"><div class="container"><div class="section-head"><span class="eyebrow">ADMIN</span><h1>Operations <span class="text-accent">Dashboard</span></h1><p>Kelola pesanan, pembayaran, refund, dan inquiry jasa website.</p></div>
+
+<div class="admin-card" style="padding:20px;margin-bottom:18px"><h3>Login Admin</h3><div class="field" style="margin-top:10px"><label for="adminEmail">Email admin</label><input id="adminEmail" type="email" autocomplete="username" placeholder="admin@domain.tld"></div><div class="field" style="margin-top:10px"><label for="adminPassword">Password admin</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="Masukkan password admin"><small>Password tidak disimpan di browser. Sesi memakai cookie HttpOnly.</small></div><button id="adminLogin" class="btn btn-primary" style="margin-top:12px">Login Admin</button> <button id="adminLogout" class="btn btn-secondary" style="margin-top:12px" hidden>Logout</button><p id="adminStatus" style="margin:10px 0;color:var(--muted)"></p></div>
+
+<div class="admin-layout" id="adminPanel" hidden>
+<aside class="admin-card admin-nav"><a class="active" href="#overview">Overview</a><a href="#agency">Agency</a><a href="#store">Digital Store</a><a href="#orders">Orders (Game)</a><a href="#refunds">Refunds</a><a href="#admins">Admin Users</a></aside>
+<div>
+
+<section id="overview"><h2 style="margin-bottom:12px">Overview</h2><div class="admin-grid">
+<div class="admin-card admin-stat">Total Order<strong id="statTotalOrders">—</strong></div>
+<div class="admin-card admin-stat">Pending<strong id="statPending">—</strong></div>
+<div class="admin-card admin-stat">Success<strong id="statSuccess">—</strong></div>
+<div class="admin-card admin-stat">Revenue<strong id="statRevenue">—</strong></div>
+<div class="admin-card admin-stat">Refund Aktif<strong id="statRefunds">—</strong></div>
+<div class="admin-card admin-stat">Inquiry Baru<strong id="statInquiries">—</strong></div>
+<div class="admin-card admin-stat">Tiket Terbuka<strong id="statTickets">—</strong></div>
+</div></section>
+
+<section id="agency" style="margin-top:24px"><h2 style="margin-bottom:12px">Agency — Inquiry Jasa Website</h2><div class="admin-card" style="padding:20px"><button id="loadInquiries" class="btn btn-secondary">Muat Inquiry</button><p id="inquiryStatus" style="margin:10px 0;color:var(--muted)"></p><div id="inquiryList" style="display:grid;gap:12px"></div></div>
+<div class="admin-card" style="padding:20px;margin-top:14px"><h3>Tiket Support</h3><button id="loadTickets" class="btn btn-secondary" style="margin-top:8px">Muat Tiket</button><p id="ticketStatus" style="margin:10px 0;color:var(--muted)"></p><div id="ticketList" style="display:grid;gap:12px"></div></div></section>
+
+<section id="store" style="margin-top:24px"><h2 style="margin-bottom:12px">Digital Store — Pesanan E-Wallet</h2><div class="admin-card" style="padding:20px"><button id="loadEwalletOrders" class="btn btn-secondary">Muat Pesanan E-Wallet</button><p id="adminStoreStatus" style="margin:10px 0;color:var(--muted)"></p><div id="ewalletOrderList" style="display:grid;gap:12px"></div></div></section>
+
+<section id="orders" style="margin-top:24px"><h2 style="margin-bottom:12px">Orders — Top Up Game &amp; Layanan Digital Lain</h2><div class="admin-card" style="padding:20px"><button id="loadGameOrders" class="btn btn-secondary">Muat Pesanan</button><p id="gameOrderStatus" style="margin:10px 0;color:var(--muted)"></p><div id="gameOrderList" style="display:grid;gap:12px"></div></div></section>
+
+<section id="admins" style="margin-top:24px"><h2 style="margin-bottom:12px">Admin Users</h2><div class="admin-card" style="padding:20px"><p id="adminUsersStatus" style="margin:10px 0;color:var(--muted)"></p><div id="adminUsersPanel"></div></div></section>
+<section id="refunds" style="margin-top:24px"><h2 style="margin-bottom:12px">Refunds</h2><div class="admin-card" style="padding:20px"><button id="loadRefunds" class="btn btn-secondary">Muat Refund</button><p id="refundStatus" style="margin:10px 0;color:var(--muted)"></p><div id="refundList" style="display:grid;gap:12px"></div></div></section>
+
+</div>
+</div>
+</div></main><script src="js/admin.js" defer></script><footer style="padding:30px 0;text-align:center;color:var(--muted);font-size:13px"><a href="terms.html">Syarat &amp; Ketentuan</a> · <a href="privacy.html">Kebijakan Privasi</a> · <a href="faq.html">FAQ</a></footer></body></html>
